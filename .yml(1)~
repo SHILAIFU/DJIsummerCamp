@@ -1,0 +1,13 @@
+ %YAML:1.0
+
+ Kp_pos: 0.8
+ Ki_pos: 0.0
+ Kd_pos: 0.2
+
+ Kp_height: 0.4
+ Ki_height: 0.0
+ Kd_height: 0.0
+
+ Kp_yaw: 0.4
+ Ki_yaw: 0.0
+ Kd_yaw: 0.0

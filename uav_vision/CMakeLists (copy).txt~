@@ -1,0 +1,63 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(uav_led_posi)
+
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  geometry_msgs
+  image_transport
+  roscpp
+  rospy
+  sensor_msgs
+  message_generation
+  std_msgs
+)
+
+add_message_files(
+	FILES
+	DetectInfo.msg
+)
+
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
+
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES moveDetec
+#  CATKIN_DEPENDS cv_bridge geometry_msgs image_transport roscpp rospy sensor_msgs std_msgs
+#  DEPENDS system_lib
+)
+
+# include_directories(include)
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
+#add_executable(detecMoving src/detecMoving.cpp)
+#target_link_libraries(detecMoving ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+#
+#add_executable(detecCircle src/detecCircle.cpp)
+#target_link_libraries(detecCircle ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+#
+#add_executable(detecFace src/faceDetec01.cpp)
+
+#add_executable(detecDoll src/detectDoll.cxx)
+#target_link_libraries(detecDoll ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+#add_executable(detecMarker src/detectMarker.cxx )
+#target_link_libraries(detecMarker ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+#add_executable(detecSquareUp src/detectSquareUp.cxx )
+#target_link_libraries(detecSquareUp ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(ledDetect src/ledDetect.cpp)
+
+
+target_link_libraries(ledDetect
+    ${catkin_LIBRARIES}
+    ${OpenCV_LIBS}
+)

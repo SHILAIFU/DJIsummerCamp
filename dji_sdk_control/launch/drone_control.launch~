@@ -1,0 +1,13 @@
+<launch>
+<<<<<<< HEAD
+	<node pkg="dji_sdk_control" type="pid_ctrl_node" name="nodeOne" output = "screen">
+	<!-- node parameters -->
+=======
+	<node pkg="dji_sdk_control" type="dji_sdk_node" name="dji_sdk">
+		<!-- node parameters -->
+>>>>>>> 4c07251a356c03144bf509a2dd423eba7196e4c0
+	<param name="Kp_pos" value="0.2" type="double" />
+	<param name="Ki_pos" value="0.0" type="double" />
+	<param name="Kd_pos" value="0.0" type="double" />
+	</node>
+</launch>
